@@ -57,6 +57,3 @@ select * from documents where supplier = 'SPP';
 select * from documents where lower(supplier) = lower('SPP');
 
 create index index_documents_on_lower_supplier on documents(lower(supplier));
-
-create index idx2 on projects(reverse(project_code))
-
