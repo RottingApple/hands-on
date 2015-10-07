@@ -15,7 +15,7 @@ LOG:  autovacuum launcher started
 
 You can now connect to postgresql server running on localhost:5432 using your client of choice. For windows and linux we recommend [pgAdmin3](http://www.pgadmin.org/download/windows.php). Install the client on your local machine, docker is only running the server.
 
-The database with example data is called `oz`.
+The database with example data is called `oz`, username is `postgres`, password is blank (there is no password).
 
 ## Labs
 
