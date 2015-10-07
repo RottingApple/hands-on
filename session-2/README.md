@@ -46,8 +46,8 @@ Queries presented
    You first come up with a naive query which uses `LIKE` (`SELECT * FROM
    crz_document_details WHERE identifier LIKE '%2011-KE'`) but quickly find out
    that is very slow (go ahead, try it). You try to add an index but quickly
-   find out that is makes no difference (go ahead, try it). Can you make this
-   feature fast?
+   find out that is makes no difference (go ahead, try it). Think about it. 
+   Why didn't the index help? Can you make this feature fast?
 
    *Hint: function-based index*
 
