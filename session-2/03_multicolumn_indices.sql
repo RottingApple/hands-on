@@ -1,7 +1,5 @@
 ﻿-- multicolumn indexes
 
--- co to je? ako to vyzera?
-
 create index index_documents_on_stp on documents(supplier, total_amount, published_on);
 
 select * from documents where supplier = 'SPP'
@@ -22,9 +20,6 @@ SET enable_bitmapscan = off
 
 select * from documents where total_amount = 2000 and published_on > '2012-01-01'
 
-
-
-
 -- http://www.postgresql.org/docs/9.3/static/indexes-multicolumn.html
 -- A multicolumn B-tree index can be used with query conditions that involve any subset of the index's columns, 
 -- but the index is most efficient when there are constraints on the leading (leftmost) columns. 
@@ -37,8 +32,6 @@ select * from documents where total_amount = 2000 and published_on > '2012-01-01
 -- but they'd still have to be scanned through. This index could in principle be used for queries that have constraints on b 
 -- and/or c with no constraint on a — but the entire index would have to be scanned, so in most cases the planner would 
 -- prefer a sequential table scan over using the index.
-
-
 
 SET enable_indexscan = on
 SET enable_bitmapscan = on
@@ -60,10 +53,3 @@ select * from documents where published_on > '2013-01-01' and total_amount = 200
 
 select * from documents where published_on > '2013-01-01' or total_amount = 2000
 select * from documents where supplier = 'SPP' or total_amount = 2000 and published_on > '2013-01-01'
-
-
--- index order
-
-select * from documents order by published_on, total_amount desc;
-
-create index index_documents_sort_desc on documents(published_on, total_amount desc) 
