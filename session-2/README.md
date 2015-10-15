@@ -16,6 +16,8 @@ change this, this is the place where postgres stores the data). Running the
 container with this volume mapping makes sure that you won't lose the data and
 that the initialization and file download will only happen once.
 
+**Important: Do not create the local directory manually, or docker would not be able to access it. Just specify the path and docker daemon will create it automatically, with correct permissions.**
+
 It will take a while, but eventually, the output will stop with
 
 ````
@@ -30,9 +32,9 @@ The database with example data is called `oz`, username is `postgres`, password 
 ## Labs
 
 Queries presented
-- [`03_multicolumn_indices.sql`](03_multicolumn_indices.sql)
-- [`04_joins.sql`](04_joins.sql)
-- [`05_aggregations.sql`](05_aggregations.sql)
+- [`03_multicolumn_indices.sql`](03_multicolumn_indices.sql) (use the `fiitpdt/postgres` container)
+- [`04_joins.sql`](04_joins.sql) (use the `fiitpdt/postgres-l` container)
+- [`05_aggregations.sql`](05_aggregations.sql) (use the `fiitpdt/postgres-l` container)
 
 ## Homework
 
@@ -48,6 +50,8 @@ Queries presented
    that is very slow (go ahead, try it). You try to add an index but quickly
    find out that is makes no difference (go ahead, try it). Think about it. 
    Why didn't the index help? Can you make this feature fast?
+   
+   (Make sure you create the index for `LIKE` using `text_pattern_ops`, see http://www.postgresql.org/docs/9.4/static/indexes-opclass.html for details.)
 
    *Hint: function-based index*
 
@@ -80,3 +84,8 @@ Queries presented
 - http://www.depesz.com/tag/unexplainable/
 - https://momjian.us/main/writings/pgsql/optimizer.pdf
 - http://blog.heapanalytics.com/speeding-up-postgresql-queries-with-partial-indexes/
+
+If you want to understand how to properly index `LIKE '%x%'` expressions (and the trade-offs), read
+
+- http://www.depesz.com/2011/02/19/waiting-for-9-1-faster-likeilike/
+- http://www.postgresql.org/docs/9.4/static/pgtrgm.html
