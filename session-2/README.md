@@ -56,12 +56,12 @@ Queries presented
    *Hint: function-based index*
 
 2. Your users want to see the top 10 recent documents ordered by date of
-   publication (`published_on`) and when there are multiple documents from the
+   publication (`published_on asc`) and when there are multiple documents from the
    same day, then they want it ordered by the contracted amount
-   (`total_amount`) from the highest price to the lowest price. Write a *fast*
+   (`total_amount desc`) from the highest price to the lowest price. Write a *fast*
    query.
 
-3. Find out any documents (`documents` table) with any company
+3. Find out any documents (`crz_document_details` table) with any company
    (`supplier_ico`) that was dissolved on 31st January 2011
    (`regis_subjects.ico`). Make the query as fast as you can *[~12 ms on my
    machine]*. Observe how the query plan changes when you change the date. Try
