@@ -5,4 +5,5 @@ You will need docker for most of the labs in this course (or alternatively, you 
 ## Table of contents
 
 1. [Query plans & Indexing](session-1)
-1. [Multi-column indices, Joins & Group by](session-2)
+2. [Multi-column indices, Joins & Group by](session-2)
+3. [Geographic Information System (GIS)](session-3)
