@@ -46,36 +46,36 @@ Bratislava. More precisely, this extent:
 
 ### Cross joins
 
-  You'll be using cross joins (cartesian joins) a lot, because often, there is
-  no column to join on. The regular join syntax requires a `ON` clausule, so
-  something like the followint is a syntax error.
-  ````
-  SELECT * FROM planet_osm_lines l
-    JOIN planet_osm_polygons p 
-   WHERE p.name = 'Karlova Ves'
-  ````
-  instead, you need to do
-  ````
-  SELECT * FROM planet_osm_lines l 
-   CROSS JOIN planet_osm_polygons p
-   WHERE p.name = 'Karlova Ves'
-  ````
+You'll be using cross joins (cartesian joins) a lot, because often, there is
+no column to join on. The regular join syntax requires an `ON` clausule, so
+something like the following is a syntax error:
+````
+SELECT * FROM planet_osm_lines l
+  JOIN planet_osm_polygons p 
+ WHERE p.name = 'Karlova Ves'
+````
+Instead, you need to do
+````
+SELECT * FROM planet_osm_lines l 
+ CROSS JOIN planet_osm_polygons p
+ WHERE p.name = 'Karlova Ves'
+````
 
 ### `WITH` clausule
 
-  When you need to use a subselect, the query can often get very hairy and
-  unreadable. Alternatively, you can first set up all subqueries and then just
-  reference them, e.g.:
+When you need to use a subselect, the query can often get very hairy and
+unreadable. Alternatively, you can first set up all subqueries and then just
+reference them, e.g.:
 
-  ````
-  WITH leisure AS (
-    SELECT * FROM planet_osm_polygon p
-    WHERE leisure IS NOT NULL
-  )
-  SELECT SUM(st_area(way)) FROM leisure
-  ````
+````
+WITH leisure AS (
+  SELECT * FROM planet_osm_polygon p
+  WHERE leisure IS NOT NULL
+)
+SELECT SUM(st_area(way)) FROM leisure
+````
 
-  TODO: better example
+*TODO: better example*
 
 ## Homework
 
@@ -83,8 +83,8 @@ Bratislava. More precisely, this extent:
    The query should output the distance in meters without any further
    modification.
 
-   Hint: notice the difference between gemoetry and geography types in this
-   case.
+   *Hint: notice the difference between geometry and geography types in this
+   case.*
 
 2. Which areas (districts, cities, mountains) are direct neighbours with
    'Karlova Ves'?
@@ -104,4 +104,4 @@ Bratislava. More precisely, this extent:
 ## Recommended reading
 
 - [PostGIS in Action](https://www.manning.com/books/postgis-in-action-second-edition)
-- [list of OSM tags](http://wiki.openstreetmap.org/wiki/Category:En_tag_descriptions)
+- [List of OSM tags](http://wiki.openstreetmap.org/wiki/Category:En_tag_descriptions)
