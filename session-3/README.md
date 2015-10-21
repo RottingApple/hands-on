@@ -31,8 +31,8 @@ Bratislava. More precisely, this extent:
 2. [Understanding Mercator projection](http://www.wired.com/2013/07/projection-mercator/)
 3. [Mercator game](https://gmaps-samples.googlecode.com/svn/trunk/poly/puzzledrag.html)
 4. [Basic GIS data types](https://en.wikipedia.org/wiki/Well-known_text#Geometric_objects)
-5. Drawing maps with Mapbox Studio Classic
-6. Styling maps with CartoCSS in Mapbox Studio Classic
+5. [Drawing maps with Mapbox Studio Classic](https://www.mapbox.com/guides/getting-started-studio/)
+6. [Styling maps with CartoCSS in Mapbox Studio Classic](https://github.com/mapbox/osm-bright)
 7. Overview of some basic GIS functions:
   - [st_touches](http://postgis.net/docs/ST_Touches.html)
   - [st_intersects](http://postgis.org/docs/ST_Intersects.html)
