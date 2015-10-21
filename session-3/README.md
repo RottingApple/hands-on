@@ -33,7 +33,7 @@ Bratislava. More precisely, this extent:
 4. [Basic GIS data types](https://en.wikipedia.org/wiki/Well-known_text#Geometric_objects)
 5. [Drawing maps with Mapbox Studio Classic](https://www.mapbox.com/guides/getting-started-studio/)
 6. [Styling maps with CartoCSS in Mapbox Studio Classic](https://github.com/mapbox/osm-bright)
-7. Overview of some basic GIS functions:
+7. [Overview of some basic GIS functions](http://postgis.net/docs/manual-2.2/using_postgis_dbmanagement.html#qa_total_length_roads):
   - [st_touches](http://postgis.net/docs/ST_Touches.html)
   - [st_intersects](http://postgis.org/docs/ST_Intersects.html)
   - [st_distance](http://www.postgis.org/docs/ST_Distance.html)
