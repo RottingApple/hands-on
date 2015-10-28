@@ -24,4 +24,8 @@ SERVICE (**flight**, **service**)
 
 - Transform this schema to an object version using *2* data types 
 - Insert some test data
-- Write query which returns services provided on a flight to London. Results should be in 1st normal form.
+- Write query which returns services provided on a flight to London. Results should be in 1st normal form
+
+## Recommended reading
+
+- http://www.ibm.com/developerworks/data/library/techarticle/dm-0506melnyk/
