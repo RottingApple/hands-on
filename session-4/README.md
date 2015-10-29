@@ -14,7 +14,7 @@ db2
 
 ## Excercises
 
-1. Suppose the following relational schema exists, where there are travel agents selling flights to some destination. A flight can have multiple services from the set `{business class, lunch, drinks, priority boarding, online check-in}`.
+1. **[use fiitpdt/postgres for this excercise]** Suppose the following relational schema exists, where there are travel agents selling flights to some destination. A flight can have multiple services from the set `{business class, lunch, drinks, priority boarding, online check-in}`.
 
 ````
 AGENT (**a_id**, name)
@@ -26,6 +26,14 @@ SERVICE (**flight**, **service**)
 - Insert some test data
 - Write query which returns services provided on a flight to London. Results should be in 1st normal form
 
+2. **[use fiitpdt/postgres for this excercise]** You need to keep records of your racing cars (each car has a make, model, engine performance) and your drivers and mechanics (you need to keep records of their name, address and a skill set (unbounded)). Each car has a single responsible mechanic and a single driver.
+
+Create a schema with custom types, insert some test data and write queries to:
+
+- find a mechanic who can also drive (assuming that 'driving' is a skill)
+- find cars which has both the mechanic and the driver live at the same address
+
 ## Recommended reading
 
-- http://www.ibm.com/developerworks/data/library/techarticle/dm-0506melnyk/
+- http://www.postgresql.org/docs/9.2/static/rowtypes.html
+- http://www.postgresql.org/docs/9.4/static/arrays.html
