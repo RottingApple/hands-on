@@ -32,6 +32,7 @@ Create a schema with custom types, insert some test data and write queries to:
 
 - find a mechanic who can also drive (assuming that 'driving' is a skill)
 - find cars which has both the mechanic and the driver live at the same address
+- find the top skill of each driver (assuming that skills are ordered, starting with the most relevant)
 
 ## Recommended reading
 
