@@ -3,13 +3,7 @@
 ## Setup
 
 ````
-sudo docker run -i -t --privileged=true --name="db2inst1" -p 50000:50000 angoca/db2-instance
-./createInstance
-db2
-
-> create database pdt using codeset UTF-8 territory en
-> connect to pdt
-
+sudo docker run -p 5432:5432 fiitpdt/postgres
 ````
 
 ## Excercises
