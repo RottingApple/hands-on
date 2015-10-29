@@ -38,3 +38,4 @@ Create a schema with custom types, insert some test data and write queries to:
 
 - http://www.postgresql.org/docs/9.2/static/rowtypes.html
 - http://www.postgresql.org/docs/9.4/static/arrays.html
+- http://waelchatila.com/2005/05/18/1116485743467.html
