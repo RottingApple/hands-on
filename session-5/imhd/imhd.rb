@@ -5,6 +5,22 @@ require 'nokogiri'
 require 'active_record'
 require 'pg'
 
+=begin
+create table stops (
+  id serial primary key,
+  name text,
+  zone integer
+)
+
+create table connections (
+   id serial primary key,
+   start_stop_id integer references stops,
+   end_stop_id   integer references stops,
+   duration      integer,
+   line          text      
+)
+=end
+
 class StopInfo < Struct.new(:stop, :duration); end
 
 class Stop < ActiveRecord::Base
