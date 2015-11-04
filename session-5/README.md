@@ -1,3 +1,12 @@
+# Session 5 - Recursive SQL
+
+## Setup
+
+````
+sudo docker run -p 5432:5432 fiitpdt/postgres-recursive
+````
+
+
 # Excercises
 
 1. Write a recursive query which returns a number and its factorial for all
@@ -95,3 +104,6 @@
         ...
        ------------------------------  
    ```
+
+## Recommended reading
+- http://www.postgresql.org/docs/9.4/static/queries-with.html
