@@ -8,3 +8,4 @@ You will need docker for most of the labs in this course (or alternatively, you 
 2. [Multi-column indices, Joins & Group by](session-2)
 3. [Geographic Information System (GIS)](session-3)
 4. [Object Oriented SQL](session-4)
+5. [Recursive SQL](session-5)
