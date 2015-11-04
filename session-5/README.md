@@ -3,8 +3,6 @@
 1. Write a recursive query which returns a number and its factorial for all
    numbers up to 10.
 
-   E.g.,
-
 ````
    ------------
    | 0  | 1   |
@@ -18,9 +16,7 @@
 ````
 
 2. Write a recursive query which returns a number and the number in Fibonacci
-   sequence at that position for the first  
-
-   E.g.,
+   sequence at that position for the first 20 Fibonacci numbers
 
 ````
    ------------
@@ -33,4 +29,69 @@
    | 7  | 21  |
    ...
 
+````
+
+3. Table `product_parts` contains products and product parts which are needed to build them. A product part may be used to assemble another product part or product, this is stored in the `part_of_id` column. When this column contains `NULL` it means that it is the final product. List all parts and their components that are needed to build a `'chair'`.
+
+````
+    ------------
+    "armrest"
+    "metal leg"
+    "metal rod"
+    "cushions"
+    "red dye"
+    "cotton"
+    ------------
+````
+
+4. Which one of all the parts that are used to build a `'chair'` has longest shipping time?
+
+```` 
+    ------------------------------
+     name         | shipping_time
+    ------------------------------
+     metal rod    | 10
+    ------------------------------    
+````
+
+5. Is it cheaper to order a finished chair from a supplier or is it cheaper if we order the basic components of a chair and build it from scratch? We are only interested in the basic components, e.g., to build a chair we need an armrest, but we do not care about its price since we want to build it from scratch using cotton and red dye.
+
+```` 
+    --------------------------------------
+     chair_price_from_basic | chair_price
+    --------------------------------------
+     14                     | 130          
+    --------------------------------------
+````
+
+6. List all bus stops between 'Zochova' and 'Zoo' for line 39. Also include the hop number on that trip between the two stops.
+
+````
+    ------------------------------
+     name         | hop
+    ------------------------------
+     Chatam Sófer | 1
+     Park kultúry | 2
+     Lafranconi   | 3
+    ------------------------------  
+````
+
+7. Find line combinations which will get me from 'Nad lúčkami' to 'Zochova' with reasonable transfers between lines.
+
+````
+    ------------------------------
+     lines
+    ------------------------------
+     {9,39}
+     {4,39}
+     {5,31}
+     {4,31}
+     {6,39}
+     {5,39}
+     {9,31}
+     {6,31}
+     {5,30,31}
+     {6,30,31}
+     ...
+    ------------------------------  
 ````
