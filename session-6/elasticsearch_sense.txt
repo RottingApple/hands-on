@@ -1,0 +1,225 @@
+POST /contracts/contract
+{
+    "name": "Jozko",
+    "surname": "Pekny",
+    "age": 22
+}
+
+POST /contracts/contract
+{
+    "name": "Jozko",
+    "surname": "Pekny",
+    "age": 22,
+    "hair": true
+}
+
+POST /contracts/contract/_search
+
+POST /contracts
+{
+    "settings": {
+        "analysis": {
+            "analyzer": {
+              "eulang": {
+                "type": "custom",
+                "tokenizer": "standard",
+                "filter": ["standard", "lowercase", "asciifolding"]
+              },
+              "shingle_analyzer": {
+                  "type": "custom",
+                  "tokenizer": "standard",
+                  "filter": ["standard", "lowercase", "asciifolding", "shingle_filter"]
+              }
+            },
+            "filter": {
+                "shingle_filter": {
+                    "type": "shingle",
+                    "min_shingle_size": 2,
+                    "max_shingle_size": 3
+                }
+            }
+          }
+        },
+        "mappings": {
+            "contract": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "analyzer": "eulang"
+                    },
+                    "identifier": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "department": {
+                        "type": "string",
+                        "analyzer": "eulang",
+                        "fields": {
+                            "shingles": {
+                                "type": "string",
+                                "analyzer": "shingle_analyzer"
+                            }
+                        }
+                    },
+                    "customer": {
+                         "type": "string",
+                        "analyzer": "eulang",
+                        "fields": {
+                            "raw": {
+                                "type": "string",
+                                "index": "not_analyzed"
+                            }
+                        }
+                    },
+                    "supplier": {
+                        "type": "string",
+                        "analyzer": "eulang"
+                    },
+                    "supplier_ico": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    },
+                    "total_amount": {
+                        "type": "float",
+                        "index": "not_analyzed"
+                    },
+                    "note": {
+                        "type": "string",
+                        "analyzer": "eulang"
+                    },
+                    "published_on": {
+                        "type": "date",
+                        "index": "not_analyzed"
+                    }
+            }
+        }
+    }
+}
+
+POST /contracts/_analyze?analyzer=shingle_analyzer
+{ Ministerstvo Sociálnych vecí, práce a rodiny }
+
+POST /contracts/_search
+{
+    "query": {
+        "match": {
+            "_all": "oracle"
+        }
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "bool": {
+            "must": [
+                {"term": {"department.shingles": "socialna poistovna"}},
+                {"match": {"name": "Oracle"}}
+            ]
+        }
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "match": {
+            "_all": "Oracle socialna poistovna"
+        }
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "multi_match": { 
+            "query": "oracle dodalo interway",
+            "type": "cross_fields",
+            "fields": ["name^3" ,"department^2", "customer", "supplier"],
+            "minimum_should_match": "3<90%"
+        }
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "bool": { 
+            "must": [
+                {"match": {"supplier": "interway"}},
+                {"match": {"department": "ministerstvo"}}
+            ]
+        }
+    }
+}
+
+
+POST /contracts/_search
+{
+    "query": {
+        "multi_match": { 
+            "query": "44684151",
+            "type": "cross_fields",
+            "fields": ["name^3" ,"department", "customer", "supplier", "identifier", "supplier_ico"],
+            "minimum_should_match": "100%"
+        }
+    }
+}
+
+
+POST /contracts/_search
+{
+    "query": {
+        "term": {
+            "department.shingles": "socialna poistovna"
+        }
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "match": {
+            "_all": "Oracle"
+        }
+    },
+    "sort": {
+        "published_on": "desc"
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "match": {
+            "_all": "it"
+        }
+    },
+    "filter": {
+        "term": {"department.shingles": "socialna poistovna"}
+    }
+}
+
+POST /contracts/_search
+{
+    "query": {
+        "match": {
+            "_all": "it"
+        }
+    },
+    "aggregations": {
+        "by_date": {
+            "date_histogram": {
+                "interval": "year",
+                "field": "published_on"
+            },
+            "aggregations": {
+                "by_customer": {
+                    "terms": {
+                        "field": "customer.raw"
+                    }
+                }
+            }
+        }
+    }
+}
