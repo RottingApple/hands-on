@@ -2,9 +2,11 @@
 
 ## Setup
 
-`docker run -p 5432:5432 fiitpdt/postgres-fulltext`
-`docker run -p 5432:5432 elasticsearch`
-`docker pull fiitpdt/elastic-import`
+```
+docker run -p 5432:5432 fiitpdt/postgres-fulltext
+docker run -p 5432:5432 elasticsearch
+docker pull fiitpdt/elastic-import
+```
 
 ## Excercises
 
