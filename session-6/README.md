@@ -25,10 +25,18 @@
 
 3. **[use elasticsearch]** Implement fulltext search in contracts using elasticsearch (case insensitive, diacritic insensitive). It should support searching by contract name, department, customer, supplier, by supplier ICO, by contract code and by contract code prefixes (such as `168/OIaMIS`). Show a breakdown by departments and by price range.
 
-You will need to define a mapping first. You can run `docker run -it --net=host fiitpdt/elastic-import` to import the data from postgresql to elasticsearch. It operates on a few assumputions:
+  You will need to define a mapping first. You can run `docker run -it --net=host fiitpdt/elastic-import` to import the data from postgresql to elasticsearch. It operates on a few assumputions:
+  
+  - postgresql is listening on localhost:5432
+  - elasticsearch is listening on localhost:9200
+  - index name is `contracts`, type name is `contract`
+  
+  If you use chrome, I recommend using [Sense](https://chrome.google.com/webstore/detail/sense-beta/lhjgkmllcaadmopgmanpapmpjgmfcfig) to interact with Elasticsearch.
 
-- postgresql is listening on localhost:5432
-- elasticsearch is listening on localhost:9200
-- index name is `contracts`, type name is `contract`
+## Recommended reading
+- http://www.postgresql.org/docs/9.4/static/textsearch.html
+- http://www.postgresql.org/docs/9.4/static/unaccent.html
+- https://www.elastic.co/guide/en/elasticsearch/guide/current/_creating_an_index.html
+- https://www.elastic.co/guide/en/elasticsearch/guide/current/search-in-depth.html
+- https://www.elastic.co/guide/en/elasticsearch/guide/current/aggregations.html
 
-Iif you use chrome, I recommend using [Sense](https://chrome.google.com/webstore/detail/sense-beta/lhjgkmllcaadmopgmanpapmpjgmfcfig) to interact with Elasticsearch.
