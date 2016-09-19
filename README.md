@@ -4,8 +4,21 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
 ## Table of contents
 
-1. [Query plans & Indexing](session-1)
-2. [Multi-column indices, Joins & Group by](session-2)
-3. [Geographic Information System (GIS)](session-3)
-4. [Object Oriented SQL](session-4)
-5. [Recursive SQL](session-5)
+1. [SQL database internals](sql-internals) (19.9-25.9.)
+
+23.9. Lecture 1
+
+2. [Object Oriented SQL](oo-sql) (26.9.-2.10.)
+3. [Geographic Information System (GIS)](gis) (3.10.-9.10.)
+4. [Recursive SQL](recursive-sql) (10.10.-16.10.)
+
+
+14.10. Lecture 2
+
+5. [Data warehouse] (dwh) (17.10.-23.10.)
+
+21.10. Lecture 3
+
+6. (24.10.-30.10.)
+7. [Graph databases (Neo4j)](neo4j) (7.11.-13.11.)
+
