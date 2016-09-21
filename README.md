@@ -6,19 +6,30 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
 1. [SQL database internals](sql-internals) (19.9-25.9.)
 
-23.9. Lecture 1
+**Lecture 1 (23.9.)**
 
 2. [Object Oriented SQL](oo-sql) (26.9.-2.10.)
 3. [Geographic Information System (GIS)](gis) (3.10.-9.10.)
 4. [Recursive SQL](recursive-sql) (10.10.-16.10.)
 
-
-14.10. Lecture 2
+ **Lecture 2 (14.10.)**
 
 5. [Data warehouse] (dwh) (17.10.-23.10.)
 
-21.10. Lecture 3
+ **Lecture 3 (21.10.)**
 
 6. (24.10.-30.10.)
 7. [Graph databases (Neo4j)](neo4j) (7.11.-13.11.)
+8. [Fulltext search (PostgreSQL & Elasticsearch)](fulltext) (7.11.-13.11.)
+
+ **Lecture 4 (11.11.)**
+
+9. [XML databases](neo4j) (14.11.-20.11.)
+10. [NoSQL databases](nosql) (21.11.-27.11.)
+
+ **Lecture 5 (25.11.) **
+
+11. Project presentations (28.11.-4.12.)
+12. Project presentations (5.12.-11.12.)
+13. Summary (12.12.-18.12.)
 
