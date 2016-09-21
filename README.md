@@ -4,7 +4,7 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
 ## Table of contents
 
-1. [SQL database internals](sql-internals) (19.9-25.9.)
+1. [SQL query plans and indexing](1-sql-internals) (19.9-25.9.)
 
  **Lecture 1 (23.9.)**
 
