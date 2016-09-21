@@ -2,9 +2,13 @@
 
 ## Setup
 
+Before you run the following command, make sure that another instance of PostgreSQL is not running and stop it of needed.
+
 ````
 docker run -p 5432:5432 fiitpdt/postgres
 ````
+
+If you get error like `Bind for 0.0.0.0:5432 failed: port is already allocated.` then there is another instance of PostgreSQL running and you need to stop it first.
 
 This will initialize postgres and seed it with example data. It will take a while, but eventually, the output will stop with
 
