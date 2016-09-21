@@ -6,7 +6,7 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
 1. [SQL database internals](sql-internals) (19.9-25.9.)
 
-**Lecture 1 (23.9.)**
+ **Lecture 1 (23.9.)**
 
 2. [Object Oriented SQL](oo-sql) (26.9.-2.10.)
 3. [Geographic Information System (GIS)](gis) (3.10.-9.10.)
