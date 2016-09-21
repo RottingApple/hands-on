@@ -27,7 +27,7 @@ You will need docker for most of the labs in this course (or alternatively, you 
 9. [XML databases](neo4j) (14.11.-20.11.)
 10. [NoSQL databases](nosql) (21.11.-27.11.)
 
- **Lecture 5 (25.11.) **
+ **Lecture 5 (25.11.)**
 
 11. Project presentations (28.11.-4.12.)
 12. Project presentations (5.12.-11.12.)
