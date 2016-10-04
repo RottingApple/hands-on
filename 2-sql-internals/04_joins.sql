@@ -1,5 +1,5 @@
-﻿select count(*) from attachments;
-select count(*) from pages;
+﻿select count(*) from documents;
+select count(*) from comments;
 
 -- hash join:
 select * from attachments a
