@@ -9,7 +9,7 @@ You will need docker for most of the labs in this course (or alternatively, you 
  **Lecture 1 (23.9.)**
 
 2. [SQL query plans and indexing](2-sql-internals) (26.9.-2.10.)
-3. [Geographic Information System (GIS)](gis) (3.10.-9.10.)
+3. [Geographic Information System (GIS)](3-gis) (3.10.-9.10.)
 4. [Object Oriented SQL](oo-sql) (10.10.-16.10.)
 5. [Recursive SQL](recursive-sql) (TBA)
 
