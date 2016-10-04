@@ -29,7 +29,7 @@ Bratislava. More precisely, this extent:
 
 1. [Spatial reference system & projections](http://help.arcgis.com/en/sdk/10.0/arcobjects_net/conceptualhelp/index.html#//0001000002mq000000)
 2. [Understanding Mercator projection](http://www.wired.com/2013/07/projection-mercator/)
-3. [Mercator game](https://gmaps-samples.googlecode.com/svn/trunk/poly/puzzledrag.html)
+3. [Mercator game](http://hive.sewanee.edu/ldale/maps/10/06-LOCAL.html)
 4. [Basic GIS data types](https://en.wikipedia.org/wiki/Well-known_text#Geometric_objects)
 5. [Drawing maps with Mapbox Studio Classic](https://www.mapbox.com/guides/getting-started-studio/)
 6. [Styling maps with CartoCSS in Mapbox Studio Classic](https://github.com/mapbox/osm-bright)
