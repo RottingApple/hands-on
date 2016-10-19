@@ -10,8 +10,8 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
 2. [SQL query plans and indexing](2-sql-internals) (26.9.-2.10.)
 3. [Geographic Information System (GIS)](3-gis) (3.10.-9.10.)
-4. [Object Oriented SQL](oo-sql) (10.10.-16.10.)
-5. [Recursive SQL](recursive-sql) (TBA)
+4. [Object Oriented SQL](4-oo-sql) (10.10.-16.10.)
+5. [Recursive SQL](5-recursive-sql) (TBA)
 
  **Lecture 2 (14.10.)**
 
@@ -19,7 +19,7 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
  **Lecture 3 (21.10.)**
 
-6. (24.10.-30.10.)
+6. **Midterm exam** (24.10.-30.10.)
 7. [Graph databases (Neo4j)](neo4j) (7.11.-13.11.)
 8. [Fulltext search (PostgreSQL & Elasticsearch)](fulltext) (7.11.-13.11.)
 
