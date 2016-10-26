@@ -19,9 +19,15 @@ Use the lecture slides and PostgreSQL documentation
 
 2. Do the same with `ROLLUP` operator. What's the difference?
 
-  The output probably doesn't match your expectations of what ROLLUP should do.
-  Both NULL values and ALL aggregations show up as an empty cell in the output.
-  Try to use the `coalesce` function to be explicit about NULLs.
+  The output probably doesn't match your expectations of what `ROLLUP` and `CUBE` should do.
+  Both `NULL` values and `ALL` aggregations show up as an empty cell in the output.
+  Try adding 
+  
+  ````sql
+  WHERE supplier IS NOT NULL
+  AND department IS NOT NULL
+  AND customer IS NOT NULL
+  ````
 
 ### XML functions
 
