@@ -20,18 +20,18 @@ You will need docker for most of the labs in this course (or alternatively, you 
 
 6. [Data warehouse && XML Databases](6-dwh) (24.10.-30.10.)
 
-7. **Midterm exam**  (31.10-6.11.)
+ **Midterm exam**  (31.10-6.11.)
 
-8. [Graph databases (Neo4j)](7-neo4j) (7.11.-13.11.)
+7. [Graph databases (Neo4j)](7-neo4j) (7.11.-13.11.)
 
  **Lecture 4 (11.11.)**
 
-9. [Fulltext search (PostgreSQL & Elasticsearch)](8-fulltext) (14.11.-20.11.)
-10. [NoSQL databases](9-nosql) (21.11.-27.11.)
+8. [Fulltext search (PostgreSQL & Elasticsearch)](8-fulltext) (14.11.-20.11.)
+9. [NoSQL databases](9-nosql) (21.11.-27.11.)
 
  **Lecture 5 (25.11.)**
 
-11. Project presentations (28.11.-4.12.)
-12. Project presentations (5.12.-11.12.)
-13. Summary (12.12.-18.12.)
+10. Project presentations (28.11.-4.12.)
+11. Project presentations (5.12.-11.12.)
+12. Summary (12.12.-18.12.)
 
