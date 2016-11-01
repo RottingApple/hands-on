@@ -50,14 +50,14 @@ You'll be using cross joins (cartesian joins) a lot, because often, there is
 no column to join on. The regular join syntax requires an `ON` clausule, so
 something like the following is a syntax error:
 ````
-SELECT * FROM planet_osm_lines l
-  JOIN planet_osm_polygons p 
+SELECT * FROM planet_osm_line l
+  JOIN planet_osm_polygon p 
  WHERE p.name = 'Karlova Ves'
 ````
 Instead, you need to do
 ````
-SELECT * FROM planet_osm_lines l 
- CROSS JOIN planet_osm_polygons p
+SELECT * FROM planet_osm_line l 
+ CROSS JOIN planet_osm_polygon p
  WHERE p.name = 'Karlova Ves'
 ````
 
