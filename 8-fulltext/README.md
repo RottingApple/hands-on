@@ -4,7 +4,7 @@
 
 ```
 docker run -p 5432:5432 fiitpdt/postgres-fulltext
-docker run -p 9200:9200 elasticsearch
+docker run -p 9200:9200 elasticsearch:5.0.1
 docker pull fiitpdt/elastic-import
 ```
 
