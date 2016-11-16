@@ -15,7 +15,8 @@ POST /contracts/contract
 
 POST /contracts/contract/_search
 
-POST /contracts
+DELETE /contracts
+PUT /contracts
 {
     "settings": {
         "analysis": {
@@ -96,8 +97,8 @@ POST /contracts
     }
 }
 
-POST /contracts/_analyze?analyzer=shingle_analyzer
-{ Ministerstvo Sociálnych vecí, práce a rodiny }
+POST /contracts/_analyze?analyzer=shingle_analyzer&text=
+{"text": "Ministerstvo Sociálnych vecí, práce a rodiny" }
 
 POST /contracts/_search
 {
@@ -133,7 +134,7 @@ POST /contracts/_search
 {
     "query": {
         "multi_match": { 
-            "query": "oracle dodalo interway",
+            "query": "oracle interway",
             "type": "cross_fields",
             "fields": ["name^3" ,"department^2", "customer", "supplier"],
             "minimum_should_match": "3<90%"
@@ -153,29 +154,6 @@ POST /contracts/_search
     }
 }
 
-
-POST /contracts/_search
-{
-    "query": {
-        "multi_match": { 
-            "query": "44684151",
-            "type": "cross_fields",
-            "fields": ["name^3" ,"department", "customer", "supplier", "identifier", "supplier_ico"],
-            "minimum_should_match": "100%"
-        }
-    }
-}
-
-
-POST /contracts/_search
-{
-    "query": {
-        "term": {
-            "department.shingles": "socialna poistovna"
-        }
-    }
-}
-
 POST /contracts/_search
 {
     "query": {
@@ -185,18 +163,6 @@ POST /contracts/_search
     },
     "sort": {
         "published_on": "desc"
-    }
-}
-
-POST /contracts/_search
-{
-    "query": {
-        "match": {
-            "_all": "it"
-        }
-    },
-    "filter": {
-        "term": {"department.shingles": "socialna poistovna"}
     }
 }
 
