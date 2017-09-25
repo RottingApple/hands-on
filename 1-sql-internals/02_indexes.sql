@@ -1,4 +1,4 @@
--- What is index:
+﻿-- What is index:
 -- http://docs.oracle.com/cd/B19306_01/server.102/b14220/img/cncpt169.gif
 
 -- index price/disadvantages
@@ -17,7 +17,7 @@ select type, count(*)
 from documents
 group by type;
 
-select id, type from documents where type = 'Egovsk::Appendix'; -- index only scan
+select type from documents where type = 'Egovsk::Appendix'; -- index only scan
 
 select pg_stat_reset();
 select * from table_stats;
@@ -35,6 +35,7 @@ where tablename='documents';
 
 -- order by
 
+select * from documents order by published_on asc;
 select * from documents order by published_on desc;
 
 create index index_documents_on_published_on on documents(published_on);

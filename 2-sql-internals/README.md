@@ -3,38 +3,18 @@
 ## Setup
 
 ````
-docker run -v ~/pg-l-data:/var/lib/postgresql/data -p 5432:5432 fiitpdt/postgres-l
+docker run -p 5432:5432 fiitpdt/postgres-shakespeare
 ````
-
-During its initialization, the container will download a 2GB SQL dump from
-http://otvorenezmluvy.sk/data/. Docker containers are ephemeral by design; if
-you stop the container you will lose all data. Notice that we are starting
-docker with a `-v` switch: it will tell docker to map a local directory
-(`~/pg-l-data` in this case, feel free to change it, but it must be an absolute
-path) to a directory inside a container (`/var/lib/postgresql/data`, do not
-change this, this is the place where postgres stores the data). Running the
-container with this volume mapping makes sure that you won't lose the data and
-that the initialization and file download will only happen once.
-
-**Important: Do not create the local directory manually, or docker would not be able to access it. Just specify the path and docker daemon will create it automatically, with correct permissions.**
-
-It will take a while, but eventually, the output will stop with
-
-````
-LOG:  database system is ready to accept connections
-LOG:  autovacuum launcher started
-````
-
 You can now connect to postgresql server running on localhost:5432 using your client of choice. For windows and linux we recommend [pgAdmin3](http://www.pgadmin.org/download/windows.php). Install the client on your local machine, docker is only running the server.
 
-The database with example data is called `oz`, username is `postgres`, password is blank (there is no password)
+The database with example data is called `shakespeare`, username is `postgres`, password is blank (there is no password)
 
 ## Labs
 
 Queries presented
 - [`03_multicolumn_indices.sql`](03_multicolumn_indices.sql) (use the `fiitpdt/postgres` container)
-- [`04_joins.sql`](04_joins.sql) (use the `fiitpdt/postgres-l` container)
-- [`05_aggregations.sql`](05_aggregations.sql) (use the `fiitpdt/postgres-l` container)
+- [`04_joins.sql`](04_joins.sql) (use the `fiitpdt/postgres-shakespeare` container)
+- [`05_aggregations.sql`](05_aggregations.sql) (no container available yet)
 
 ## Homework
 

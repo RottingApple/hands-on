@@ -46,10 +46,4 @@ create index index_documents_on_published_on on documents(published_on);
 
 select * from documents where supplier = 'SPP'
 select * from documents where supplier = 'SPP' and total_amount = 2000
-select * from documents where supplier = 'SPP' and total_amount = 2000 and published_on > '2013-01-01'
-
-select * from documents where published_on > '2013-01-01'
-select * from documents where published_on > '2013-01-01' and total_amount = 2000
-
-select * from documents where published_on > '2013-01-01' or total_amount = 2000
 select * from documents where supplier = 'SPP' or total_amount = 2000 and published_on > '2013-01-01'

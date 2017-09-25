@@ -1,29 +1,40 @@
-﻿select count(*) from documents;
-select count(*) from comments;
+﻿select count(*) from character;
+select count(*) from paragraph;
+select count(*) from work;
+select count(*) from chapter;
 
 -- hash join:
-select * from attachments a
-   join pages p on p.attachment_id = a.id
+select * from paragraph p
+   join character c on p.charid = c.charid
 
 -- nested loop:
-select * from documents d
-   join comments c on d.id = c.document_id
+set enable_hashjoin=off 
+set enable_mergejoin=off
+
+select * from character c
+   join paragraph p on p.charid = c.charid
+
+create index idx_paragraph_on_charid on paragraph(charid);
+
+select * from character c
+   join paragraph p on p.charid = c.charid
+
+set enable_hashjoin=on 
+set enable_mergejoin=on
 
 -- reversed! card(c) < card(d)
 
 -- merge join
-select * from (select * from documents order by id) d
-   join comments c on d.id = c.document_id
+select * from paragraph a
+   join wordform b on a.paragraphid = b.wordformid
 
-
--- materialize -> what if driving table has duplicates?
-
+-- join makes no sense, just to showcase a merge join
 
 -- multi join
 select *
-   from documents d
-   join attachments a on a.document_id = d.id
-   join pages p on p.attachment_id = a.id
+   from character c
+   join character_work cw on c.charid = cw.charid
+   join work w on w.workid = cw.workid
 
 -- genetic query optimizer
 -- 1-2-3-4-5
@@ -31,6 +42,7 @@ select *
 
 -- left/right join
 
-select * from documents d
-   left join comments c on d.id = c.document_id
+select * from paragraph p
+   left join character c on p.charid = c.charid
+
 

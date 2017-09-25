@@ -1,9 +1,6 @@
 FROM postgres:9.3
 
-ENV POSTGRES_DB oz
+ENV POSTGRES_DB shakespeare
 
-ADD entrypoint.sh /
-
-VOLUME ["/docker-entrypoint-initdb.d"]
-
-ENTRYPOINT ["/entrypoint.sh"]
+ADD shakespeare.sql.gz /docker-entrypoint-initdb.d/
+RUN gunzip /docker-entrypoint-initdb.d/shakespeare.sql.gz
