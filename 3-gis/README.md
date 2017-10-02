@@ -2,8 +2,7 @@
 
 ## Setup
 
-1. Download [Mapbox Studio Classic](https://www.mapbox.com/mapbox-studio-classic)
-2. Download the docker container as usual
+Download the docker container as usual
 
 ````
 docker run -p 5432:5432 fiitpdt/postgis
