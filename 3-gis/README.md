@@ -145,4 +145,4 @@ SELECT SUM(st_area(way)) FROM leisure
 ## Recommended reading
 
 - [PostGIS in Action](https://www.manning.com/books/postgis-in-action-second-edition)
-- [List of OSM tags](http://wiki.openstreetmap.org/wiki/Category:En_tag_descriptions)
+- [List of OSM tags](https://wiki.openstreetmap.org/wiki/Category:Tag_descriptions)
