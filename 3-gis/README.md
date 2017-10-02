@@ -9,8 +9,7 @@
 docker run -p 5432:5432 fiitpdt/postgis
 ````
 
-Phew, no volume mapping neccessary this time. The rest is as usual. You can
-safely ignore errors about extension being already present and there are some
+You can safely ignore errors about extension being already present and there are some
 constraint validation failures, but don't worry about them.
 
 | Attribute| Value                  |
@@ -41,6 +40,48 @@ Bratislava. More precisely, this extent:
   - [st_contains](http://postgis.net/docs/manual-1.4/ST_Contains.html)
   - [st_area](http://postgis.org/docs/ST_Area.html)
 8. [Spatial indices](http://revenant.ca/www/postgis/workshop/indexing.html)
+
+## Importing OSM data
+
+1. Open OSM http://www.openstreetmap.org/export#map=14/48.1323/17.0958 and position the viewport to include area you want to download.
+2. Click the green Export button and in the panel that opens on the left side, click the blue Export button again. The official OSM servers are often unavailable for export, you may need to use a mirror, e.g. the Overpass API. Just click the mirror name in the left panel and save the file to local disk.
+3. The downloaded data will be in XML format (with .osm extension) and we'll need to convert it to SQL. Install osm2pgsql tool from http://wiki.openstreetmap.org/wiki/Osm2pgsql
+4. Inspect the downloaded file. What you get will depend on the mirror you used, but it's important that you end up with uncompressed XML with .osm extension. In my case the downloaded file was called `map` (with no extension). Let's inspect what it is.
+```
+$ file map                       
+map: OpenStreetMap XML data 
+```
+In this case we got uncompressed XML, so just rename it
+````
+$ mv map map.osm 
+````
+5. Prepare the database. First install PostGIS extension http://postgis.net/install/
+6. Create the database (we'll use `gis` as a name): run a SQL command `create database gis` as the administrative postgres user. Connect to the newly created database and run `create extension postgis` which will enable PostGIS for the database.
+7. Run `osm2pgsql`
+````
+$ osm2pgsql -m -U postgres -H localhost map.osm
+
+osm2pgsql version 0.92.0 (64 bit id space)             
+                                                                   
+Using built-in tag processing pipeline       
+Using projection SRS 3857 (Spherical Mercator)            
+Setting up table: planet_osm_point
+Setting up table: planet_osm_line
+Setting up table: planet_osm_polygon
+Setting up table: planet_osm_roads
+Allocating memory for dense node cache
+Allocating dense node cache in one big chunk
+Allocating memory for sparse node cache
+Sharing dense sparse
+
+[more output...]
+
+All indexes on planet_osm_line created in 1s
+Completed planet_osm_line
+
+Osm2pgsql took 3s overall
+
+````
 
 ## SQL tricks you might find useful
 
