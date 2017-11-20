@@ -33,7 +33,7 @@ docker pull fiitpdt/elastic-import
   - elasticsearch is listening on localhost:9200
   - index name is `contracts`, type name is `contract`
   
-  If you use chrome, I recommend using [Sense](https://chrome.google.com/webstore/detail/sense-beta/lhjgkmllcaadmopgmanpapmpjgmfcfig) to interact with Elasticsearch.
+I recommend using [Postman](https://www.getpostman.com/) to interact with Elasticsearch.
 
 ## Recommended reading
 - http://www.postgresql.org/docs/9.4/static/textsearch.html
