@@ -19,7 +19,7 @@ docker pull fiitpdt/elastic-import
   ```
   Q: little friends
   ```
-   - construct a boolean model
+   - construct a vector model
    - rank Q by a vector similarity metric
    - rank Q using TF.IDF
    
